@@ -25,9 +25,9 @@ def keep_alive():
     t = Thread(target=run)
     t.start()
 
-api_id = 20900277
-api_hash = "6a3d761f9be590be4259404f34a1f81e"
-session = "1BVtsOIQBuyZEug8Cibrhs0DTVwNad4D_iJGVL2vtSfKra0cnCp2OoyXih6zwvaud7Jkh5WJj0ar8fOkQKuzNZZw5rRzEC5mKR2W64aFo3ZR8eLjDk3heAxXVoGOvs0S-BM3QTh6k5-CjSFOBI2p_FWQtwu2NsYb114TVijvOWPFVN7hliwQeobJ5Hh-ABSRjRbqE9cryb6H-e2-AoYi-8_cD0cwIIH4dik1IjCYMLcmbwP2Bk_ck2ydA8b9WYLeaoMtHmNowyBoJV_EKvWGi2VTKAmaNOgbN9K0g4jeJuj20EmSydKJDdNuv3ekNH1VakZF4MDmElfYVYRcbYDIrIDa29FPOq08="
+api_id = 36264907
+api_hash = "baaa21e318bde893852bed8b6d3d9217"
+session = "1BVtsOIQBu1ruR2QAnjYc_3sGHfeGTlZ_OTgr9pvbmCkKkcTzS0EXeQHoPTMwXEugdmYx3RqDdUW3eszPg3SNttEo6YhswqOcIvi7ABWKalkCmG3PIxbtkMbqpI3M62pL5Gozbyna-mOM4tN9hRJpB5D_QvHe2xbAIEhWq4bJ-FNNVjRoZDCzx0sNySXR5Y5wqrW7E31IqrjMes9H-djrtXE-ItEb9rUz15K7ySx5_BIXv9dCQPSfSA97tEd8OmvctMaWaYdkm_ov8_EngeKfa835RwIciWcBkswEhGVnwoFFvJ_NJrCbkPW8KCsI6KklWHjB1HQaRAel0NWLQXOlFigHuC0hCdE="
 
 client = TelegramClient(StringSession(session), api_id, api_hash)
 
@@ -49,17 +49,17 @@ async def unblock_user(event):
         await client(UnblockRequest(event.chat_id))
         await event.edit("User unblocked.")
 
-TARGET_GROUP_ID = -1003623091628
+#TARGET_GROUP_ID = -1003623091628
 
-@client.on(events.ChatAction())
-async def welcome_new_member(event):
-    if event.chat_id == TARGET_GROUP_ID:
-        if event.user_joined or event.user_added:
-            user = await event.get_user()
-            await client.send_message(
-                TARGET_GROUP_ID,
-                f"𝗪𝗘𝗟𝗖𝗢𝗠𝗘 {user.first_name} ❤️\n\n𝗠𝗘𝗦𝗦𝗔𝗚𝗘 𝗠𝗘 𝗙𝗢𝗥 𝗙𝗨𝗡 & 𝗖𝗔𝗠 𝗦𝗛𝗢𝗪. 𝗠𝗨𝗔𝗔𝗔𝗛𝗛 💋"
-            )
+#@client.on(events.ChatAction())
+#async def welcome_new_member(event):
+#    if event.chat_id == TARGET_GROUP_ID:
+#        if event.user_joined or event.user_added:
+        #    user = await event.get_user()
+         #   await client.send_message(
+             #   TARGET_GROUP_ID,
+        #        f"𝗪𝗘𝗟𝗖𝗢𝗠𝗘 {user.first_name} ❤️\n\n𝗠𝗘𝗦𝗦𝗔𝗚𝗘 𝗠𝗘 𝗙𝗢𝗥 𝗙𝗨𝗡 & 𝗖𝗔𝗠 𝗦𝗛𝗢𝗪. 𝗠𝗨𝗔𝗔𝗔𝗛𝗛 💋"
+         #   )
     
 
 @client.on(events.NewMessage(incoming=True))
@@ -71,29 +71,10 @@ async def auto_price(event):
             replied_users.add(user_id)
 
             await asyncio.sleep(2)
-            await event.respond('''🐣🦋 𝗡𝗔𝗩𝗬𝗔 𝗔𝗩𝗔𝗜𝗟𝗔𝗕𝗟𝗘 🐣🦋
-
-       🍒  𝗩𝗢𝗜𝗖𝗘 𝗖𝗔𝗟𝗟  🍒
-
-🍒𝟱 𝗠𝗜𝗡𝗨𝗧𝗘𝗦 - 𝟮𝟬𝟬 𝗥𝗦 💦
-🍒𝟭𝟬 𝗠𝗜𝗡𝗨𝗧𝗘𝗦 - 𝟯𝟱𝟬 𝗥𝗦 💦
-
-       🎀 𝗩𝗜𝗗𝗘𝗢 𝗖𝗔𝗟𝗟 💘
-
-🍒𝟱 𝗠𝗜𝗡𝗨𝗧𝗘𝗦 - 𝟱𝟬𝟬 𝗥𝗦  💦
-🍒𝟭𝟬 𝗠𝗜𝗡𝗨𝗧𝗘𝗦 - 𝟴𝟬𝟬 𝗥𝗦 💦
-
-       🌟 𝗦𝗘𝗫 𝗖𝗛𝗔𝗧 👄
-
-🍒𝟱 𝗠𝗜𝗡𝗨𝗧𝗘𝗦 - 𝟮𝟬𝟬 𝗥𝗦 💦
-🍒𝟭𝟬 𝗠𝗜𝗡𝗨𝗧𝗘𝗦 - 𝟯𝟱𝟬 𝗥𝗦 💦
-
-       🎀 𝗦𝗣𝗘𝗖𝗜𝗔𝗟 𝗦𝗛𝗢𝗪 💘
-
-🍒 𝗦𝗔𝗥𝗘𝗘 𝗦𝗛𝗢𝗪 - 𝟭𝟮𝟬𝟬 𝗥𝗦 💦
-🍒 𝗦𝗤𝗨𝗜𝗥𝗧 𝗦𝗛𝗢𝗪 - 𝟭𝟭𝟬𝟬 𝗥𝗦 💦
-
-💟𝗗𝗘𝗠𝗢 - 𝟭𝟬𝟬 𝗥𝗦💟''')
+            await event.respond('''Hi.
+            If you need nude video call or cam show msg @GF_NAVYA 💋
+            
+            If you want a casual group join @WIFE_SWAPPING_GF ❤️''')
 
 @client.on(events.NewMessage(incoming=True))
 async def auto_reply(event):
