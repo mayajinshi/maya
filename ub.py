@@ -40,9 +40,35 @@ async def block_user(event):
         await client(BlockRequest(entity))
         await event.edit("Blocked.")
 
+quotes = [
+    "Hi",
+    "Hii",
+    "Addd Mee",
+    "Heloo",
+    "Nice broo"
+]
+
+client = TelegramClient("session", api_id, api_hash)
+
+async def send_quotes():
+    while True:
+        quote = random.choice(quotes)
+
+        async for dialog in client.iter_dialogs():
+            if dialog.is_group: 
+                try:
+                    await client.send_message(dialog.id, quote)
+                    print(f"Sent to {dialog.name}: {quote}")
+                    await asyncio.sleep(5)  
+                except Exception as e:
+                    print(f"Failed in {dialog.name}: {e}")
+
+        await asyncio.sleep(60)  
+
+with client:
+    client.loop.run_until_complete(send_quotes())
 
 from telethon.tl.functions.contacts import UnblockRequest
-
 @client.on(events.NewMessage(outgoing=True, pattern=r"\.unblock"))
 async def unblock_user(event):
     if event.is_private:
