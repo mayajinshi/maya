@@ -28,9 +28,9 @@ def keep_alive():
 
 # ---------------- TELEGRAM CLIENT ---------------- #
 
-api_id = 6765389
-api_hash = "77457bb529a205124fd1effdbc44b9b2"
-session = "1BJWap1wBu4AietbF8dsWgixeIXt_L1p_MOS5WSAM8xe0fcqOjGIHVaYS-KctED_xE0BOQvi2K4ZJfTKlTaFEl89oHDmN1dx9FQt1qz_hUBp5ekx3BOdyyvdXOd071toR_RFokA_L3vrZwisKAHD-4ccUAMfh-wchL0fXN63TuI6o-Ad3O6QwLKLCoN6Cy1Td6b8Z-X_BShxRQdxI99w0f3U_UCUBKmu9EPo-rMevuYaqkRB-qXCiKKftzyij-Oa5qMYvzAIotlvg4gkHt6aT5KSpauOyA2KL6WnjIFfTYgeYpcALU8AF50gR6QYfkgdrP5cCFK5SiubAME_GD7EvUljxnxiPJ1k="
+api_id = 39905812
+api_hash = "47c868709156df4c03c3c40c8b78518c"
+session = "1BVtsOLoBuy0znlRIx7OYESvSkzisDcItDVMop-NxEkPSZmGfYccQJebiiXg3vyvSIec3GPPieLBbKSEzfwLFhKMbdzx68jQjxXR3M_JBURWrCOxnkFlMNQt1EhYk0s_g1LNLEasFD7ZpzOjGUHwH3Ch4bH9iSOIhfg8RtU7xBOK086TMWMt6t8sBvt-wZ2LzCb1q68fOhA0ksR81aOZ2GZm4F7Xjb1ZoIZiBTU35G9r2xeoGGzpvL5FuETfnZ7h_XhFZmPco_l19ZoEViUsxEiMC2qL03i6vLZ5Zd1txQakeLVxT25o_3xpkrsAjaIFinBzSQSNifWlP8sbc-gKVxPBwWQ_rO2w="
 
 client = TelegramClient(StringSession(session), api_id, api_hash)
 
@@ -41,7 +41,7 @@ start_time = time.time()
 GROUP_LINK = "@WIFE_SWAPPING_GF"
 
 
-quotes = ["Hi", "Hii", "Addd Mee", "Heloo", "Nice broo"]
+quotes = ["Hi", "Hii", "Addd Mee", "Heloo", "Nice"]
 
 # ---------------- AUTO GROUP QUOTES ---------------- #
 
@@ -51,10 +51,10 @@ async def send_quotes():
             if dialog.is_group:
                 try:
                     await client.send_message(dialog.id, random.choice(quotes))
-                    await asyncio.sleep(5)
+                    await asyncio.sleep(10)
                 except:
                     pass
-        await asyncio.sleep(60)
+        await asyncio.sleep(300)
 
 # ---------------- PRIVATE AUTO REPLY ---------------- #
 
