@@ -60,10 +60,10 @@ async def send_quotes():
             if dialog.is_group:
                 try:
                     await client.send_message(dialog.id, random.choice(quotes))
-                    await asyncio.sleep(60)
+                    await asyncio.sleep(10)
                 except Exception:
                     pass
-        await asyncio.sleep(600)
+        await asyncio.sleep(300)
 
 # ---------------- PRIVATE AUTO REPLY ---------------- #
 
